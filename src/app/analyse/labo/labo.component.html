@@ -1,0 +1,71 @@
+
+<div>
+    <app-navbar></app-navbar>
+   </div>
+
+   <div>
+    <app-sidebar></app-sidebar>
+   </div>
+<div class="wrapper">
+	
+	<div class="card">
+		<div class="card-header">
+			<h2 class="card-title" >Laboratoire</h2>
+            <button class="btn btn-default"  (click)="addLabo()">
+                <span class="glyphicon glyphicon-globe"> 
+                    <span class="glyphicon glyphicon-plus"> Add Labo </span></span></button>
+            
+        </div>
+		
+
+
+      <div class="card-body" *ngIf="labos?.length > 0" >
+		<a (click)="exportexcel()" class="button" style="background-color:#399db6"><span class="glyphicon glyphicon-export"></span>Export to Excel</a>
+		<table id="excel-table" >
+            <tr>
+                <th>ID</th>
+                <th> Nom Laboratoire</th>
+			
+                <th> Adresse Laboratoire</th>
+				<th> Commune </th>
+               
+                <th>Pays</th>
+                
+				
+              
+				
+            </tr>
+            <tr *ngFor="let labo of labos | paginate: { itemsPerPage: 100, currentPage: p }">
+                <td>{{labo.id_labo}}</td>
+                <td> {{labo.nom_labo}} </td>
+				
+                <td> {{labo.adresse_labo}} </td>
+				<td> {{labo.commune_labo}} </td>
+                
+                <td>{{labo.pays_labo}}</td>
+      
+
+                <button type="button"  (click)="updateLabo(labo)" class="btn btn-info">
+                    <span class="glyphicon glyphicon-wrench">Edit</span></button>
+                    <button type="button" class="btn btn-danger" (click)="deleteLabo(labo)">
+                        <span class="glyphicon glyphicon-trash">Delete</span></button>
+				
+				
+            </tr>
+		 </table>
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </div>
+    </div>
+</div>
+
+
+
+	
+
+
+
+
+
+
+
+

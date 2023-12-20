@@ -1,0 +1,52 @@
+<div class="container-fluid bg">
+    <div class="container mt-5" >
+        <div class="card">
+            <h5 class="card-header text-center">Update Patient </h5>
+            <div class="card-body">
+  
+   
+        
+    <form [formGroup]="angform" (ngSubmit)="postdata(angform)" autocomplete="off">
+  
+        <div class="form-group">
+           
+      <input type="hidden" name="id_patient" formControlName="id_patient"  class="form-control input-sm">
+      
+        </div>
+        <div class="form-group">
+        <label for="nom"> Nom Patient</label>
+            <input type="text" name="nom" formControlName="nom" autocomplete="off" class="form-control input-sm" placeholder="Nom Patient">
+
+        </div>
+        <div class="form-group">
+        <label for="prenom">Prenom Patient</label>
+        <input type="text" name="prenom" formControlName="prenom" autocomplete="off" class="form-control input-sm" placeholder="Prenom Patient">
+         </div>
+         <div class="form-group">
+            <label for="date_naissance">Date Naissance</label>
+            <input type="date" name="date_naissance" formControlName="date_naissance" autocomplete="off" class="form-control input-sm" placeholder="Date Naissance">
+
+        </div>
+         <div class="form-group">
+            <label for="adresse"> Adresse</label>
+            <input type="text" name="adresse" formControlName="adresse" autocomplete="off" class="form-control input-sm" placeholder="Adresse Patient">
+             </div>
+             <div class="form-group">
+                <label for="commune">Commune</label>
+                <input type="text" name="commune" formControlName="commune" autocomplete="off" class="form-control input-sm" placeholder="Entrer Commune">
+                 </div>
+                 <div class="form-group">
+                    <label for="code_postal">Code Postal</label>
+                    <input type="text" name="code_postal" formControlName="code_postal" autocomplete="off" class="form-control input-sm" placeholder="Entrer Code Postal">
+                     </div>
+                     <div class="form-group">
+                        <label for="pays">Pays</label>
+                        <input type="text" name="pays" formControlName="pays" autocomplete="off" class="form-control input-sm" placeholder="Entrer Pays">
+                         </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!angform.valid">Update</button>
+    </form>
+</div>
+</div>
+</div>
+</div>

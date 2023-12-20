@@ -1,0 +1,43 @@
+<div class="container-fluid bg">
+    <div class="container mt-5" >
+        <div class="card">
+            <h5 class="card-header text-center">Update Laboratoire </h5>
+            <div class="card-body">
+  
+   
+        
+    <form [formGroup]="angform" (ngSubmit)="postdata(angform)" autocomplete="off">
+  
+        <div class="form-group">
+           
+      <input type="hidden" name="id_labo" formControlName="id_labo"  class="form-control input-sm">
+      
+        </div>
+        <div class="form-group">
+        <label for="nom_labo">Nom Laboratoire</label>
+            <input type="text" name="nom_labo" formControlName="nom_labo" autocomplete="off" class="form-control input-sm" placeholder="Nom Laboratoire">
+
+        </div>
+        <div class="form-group">
+        <label for="adresse_labo">Adresse Laboratoire</label>
+        <input type="text" name="adresse_labo" formControlName="adresse_labo" autocomplete="off" class="form-control input-sm" placeholder="Adresse Laboratoire">
+         </div>
+         <div class="form-group">
+            <label for="commune_labo">Commune Laboratoire</label>
+            <input type="text" name="commune_labo" formControlName="commune_labo" autocomplete="off" class="form-control input-sm" placeholder="commu Laboratoire">
+
+        </div>
+         <div class="form-group">
+            <label for="pays_labo"> Pays Laboratoire</label>
+            <input type="text" name="pays_labo" formControlName="pays_labo" autocomplete="off" class="form-control input-sm" placeholder="pays Laboratoire">
+             </div>
+      
+
+       
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!angform.valid">Update</button>
+    </form>
+</div>
+</div>
+</div>
+</div>

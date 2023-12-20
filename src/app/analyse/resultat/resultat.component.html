@@ -1,0 +1,80 @@
+
+<div>
+    <app-navbar></app-navbar>
+   </div>
+
+   <div>
+    <app-sidebar></app-sidebar>
+   </div>
+   <div class="container-fluid bg">
+    <div class="container mt-5" >
+        <div class="card">
+            <h5 class="card-header text-center"> Resultat </h5>
+            <div class="card-body">     
+      <div class="container">
+        <embed type="application/pdf" src="assets/PDF/analyse.pdf" width="1000" height="500">
+         
+    </div>
+    <div class="container" *ngFor="let analyse of analyses">    
+      
+      <div class="row">
+   
+        <div class="col-sm-3">
+          <p>Nom</p>
+          {{analyse.nom}}
+        </div>
+        <div class="col-sm-3"> 
+          <p>Prenom</p>
+          {{analyse.prenom}}
+        </div>
+        <div class="col-sm-3"> 
+          <p>Date Naissance</p>
+          {{analyse.date_naissance}}
+        </div>
+        <div class="col-sm-3">
+          <p>Adresse</p>
+          {{analyse.adresse}}
+        </div>
+      </div>
+    </div><br>
+    
+    <div class="container-fluid bg-3 text-center" >    
+      <div class="row" *ngFor="let analyse of analyses">
+        <div class="col-sm-3">
+          <p>Pays</p>
+          {{analyse.pays}}
+        </div>
+        <div class="col-sm-3"> 
+          <p>Commune</p>
+          {{analyse.commune}}
+        </div>
+        <div class="col-sm-3"> 
+          <p>Code Postal</p>
+          {{analyse.code_postal}}
+        </div>
+        <div class="col-sm-3">
+          <p>Nom Laboratoire</p>
+          {{analyse.nom_labo}}
+        </div>
+        <div class="col-sm-3">
+          <p>Nom Laboratoire</p>
+          {{analyse.adresse_labo}}
+        </div>
+        <div class="col-sm-3">
+          <p>Date Analyse</p>
+          {{analyse.date}}
+        </div>
+        <div class="col-sm-3">
+          <p>Name </p>
+          {{analyse.name}}
+        </div>
+        <div class="col-sm-3">
+          <p>Valeur </p>
+          {{analyse.val}}
+        </div>
+      </div>
+    </div><br><br>
+  </div>
+</div>
+</div>
+</div>

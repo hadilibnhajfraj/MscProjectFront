@@ -1,0 +1,53 @@
+<div class="container-fluid bg">
+<div class="container mt-5" >
+    <div class="card">
+        <h5 class="card-header text-center">Create User</h5>
+        <div class="card-body">
+
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" formControlName="nom" autocomplete="off" class="form-control input-sm" placeholder="User Name">
+ 
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" name="prenom" formControlName="prenom" autocomplete="off" class="form-control input-sm" placeholder="Username Name">
+ 
+                </div>
+ 
+                <div class="form-group">
+                    <label for="date_naissance">Date Naissance</label>
+                    <input type="date" name="date_naissance" formControlName="date_naissance" autocomplete="off" class="form-control input-sm" placeholder="Email Address">
+ 
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse</label>
+                    <input type="text" name="adresse" formControlName="adresse"  autocomplete="off" class="form-control input-sm" placeholder="Password">
+ 
+                </div>
+                <div class="form-group">
+                    <label for="code_postal">Code Postal</label>
+                    <input type="text" name="code_postal" formControlName="code_postal" autocomplete="off" class="form-control input-sm" placeholder="Mobile No">
+ 
+                </div>
+                <div class="form-group">
+                    <label for="commune">commune</label>
+                    <input type="text" name="commune" formControlName="commune" autocomplete="off" class="form-control input-sm" placeholder="Mobile No">
+ 
+                </div>
+                <div class="form-group">
+                    <label for="pays">Pays</label>
+                    <input type="text" name="pays" formControlName="pays" autocomplete="off" class="form-control input-sm" placeholder="Mobile No">
+ 
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!angForm.valid">Create</button>
+ 
+            </form>
+            </div>
+        </div>
+        </div>
+  </div>
+
+  
+ 

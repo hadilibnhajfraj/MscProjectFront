@@ -1,0 +1,74 @@
+
+<div>
+    <app-navbar></app-navbar>
+   </div>
+
+   <div>
+    <app-sidebar></app-sidebar>
+   </div>
+<div class="wrapper">
+	
+	<div class="card">
+		<div class="card-header">
+			<h2 class="card-title" >Patient</h2>
+            <button class="btn btn-default"  (click)="addPatient()">
+                <span class="	glyphicon glyphicon-user"> 
+                    <span class="glyphicon glyphicon-plus"> Add Patient </span></span></button>
+            
+        </div>
+		
+
+
+      <div class="card-body" *ngIf="patients?.length > 0" >
+		<a (click)="exportexcel()" class="button" style="background-color:#399db6"><span class="glyphicon glyphicon-export"></span>Export to Excel</a>
+		<table id="excel-table" >
+            <tr>
+                <th>ID</th>
+                <th> Nom </th>
+				<th> Prenom </th>
+                <th>Date Naissance</th>
+                <th> Adresse</th>
+				<th> Commune </th>
+                <th>Code Postal</th>
+                <th>Pays</th>
+                
+				
+              
+				
+            </tr>
+            <tr *ngFor="let patient  of patients | paginate: { itemsPerPage: 100, currentPage: p }">
+                <td>{{patient.id_patient}}</td>
+                <td> {{patient.nom}} </td>
+				<td> {{patient.prenom}} </td>
+                <td> {{patient.date_naissance}} </td>
+                <td> {{patient.adresse}} </td>
+                <td> {{patient.code_postal}} </td>
+				<td> {{patient.commune}} </td>
+               
+                <td>{{patient.pays}}</td>
+      
+
+                <button type="button"  (click)="updatePatient(patient)" class="btn btn-info">
+                    <span class="glyphicon glyphicon-wrench">Edit</span></button>
+                    <button type="button" class="btn btn-danger" (click)="deletePatient(patient)">
+                        <span class="glyphicon glyphicon-trash">Delete</span></button>
+				
+				
+				
+            </tr>
+		 </table>
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </div>
+    </div>
+</div>
+
+
+
+	
+
+
+
+
+
+
+

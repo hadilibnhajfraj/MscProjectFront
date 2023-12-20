@@ -1,0 +1,36 @@
+<div class="container-fluid bg">
+    <div class="container mt-5" >
+        <div class="card">
+            <h5 class="card-header text-center">Create Resultat</h5>
+            <div class="card-body">
+  
+              <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                  <div class="form-group">
+                      <label for="num_analyse">N° Analyse</label>
+                      <input type="number" name="num_analyse" formControlName="num_analyse" autocomplete="off" class="form-control input-sm" placeholder="Numero Analyse">
+   
+                  </div>
+                  <div class="form-group">
+                      <label for="nom_resultat">Nom Resultat </label>
+                      <input type="text" name="nom_resultat" formControlName="nom_resultat" autocomplete="off" class="form-control input-sm" placeholder="Nom Analyse">
+   
+                  </div>
+   
+                  <div class="form-group">
+                      <label for="valeur_resultat">Valeur Resultat</label>
+                      <input type="text" name="valeur_resultat" formControlName="valeur_resultat" autocomplete="off" class="form-control input-sm" placeholder="Date Analyse">
+   
+                  </div>
+               
+              
+                  <td><button type="button"  class="btn btn-link"><a routerLink='/analyse/createResultat'>
+                    <span class="glyphicon glyphicon-eye-open">Ajouter d'autres Analyse</span></a></button> </td>
+                  <button type="submit" class="btn btn-primary" [disabled]="!angForm.valid">Create</button>
+   
+              </form>
+            </div>
+        </div>
+        </div>
+  </div>
+   
+  

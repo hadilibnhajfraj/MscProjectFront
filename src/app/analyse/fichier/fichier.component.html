@@ -1,0 +1,57 @@
+
+<div>
+    <app-navbar></app-navbar>
+   </div>
+
+   <div>
+    <app-sidebar></app-sidebar>
+   </div>
+   <div class="wrapper">
+	
+ 
+    <div class="row d-flex justify-content-center mt-100">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5>File Upload</h5>
+                </div>
+                <div class="card-block">
+                    <form [formGroup]="myForm" (ngSubmit)="submit()">
+     
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input
+                                formControlName="name"
+                                id="name"
+                                type="text"
+                                class="form-control">
+                            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                                <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+                     
+                      
+                                <div *ngIf="f['name'].errors && f['name'].errors['minlength']">Name should be 3 character.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pdf">File</label>
+                            <input
+                                formControlName="pdf"
+                                id="pdf"
+                                type="file"
+                                class="form-control"
+                                (change)="onFileChange($event)">
+                            <div *ngIf="f['pdf'].touched && f['pdf'].invalid" class="alert alert-danger">
+                                <div *ngIf="f['pdf'].errors && f['pdf'].errors['required']">File is required.</div>
+                            </div>
+                        </div>
+                        
+                   
+                    <div class="text-center m-t-20">
+                        <button class="btn btn-primary" [disabled]="myForm.invalid" type="submit">Upload Now</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>

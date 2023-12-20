@@ -1,0 +1,62 @@
+<div class="container-fluid bg">
+    <div class="container mt-5" >
+        <div class="card">
+            <h5 class="card-header text-center">Login</h5>
+            <div class="card-body">
+                <div class="panel-body p-3">
+                    <form (ngSubmit)="submit()" [formGroup]="form" >
+                        <div class="form-group py-2">
+                            <div class="input-field"> <span class="far fa-user p-2"></span>
+                                 <input type="text" 
+                                placeholder="Username or Email"
+                                type="text" formControlName="email" name="email" placeholder="Enter a valid email address"
+                        [ngClass]="{'is-invalid' : submitted && f['email'].errors}" required>
+                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                            <div *ngIf="f['email'].errors['required']">
+                             Email is required
+                            </div>
+                            <div *ngIf="f['email'].errors['email']">
+                                Email must be a valid email adresss
+                               </div>
+
+                        </div> </div>
+                        </div>
+                        <div class="form-group py-1 pb-2">
+                            <div class="input-field"> <span class="fas fa-lock px-2"></span>
+                                 <input type="password" formControlName="password"  name="password" placeholder="Enter password" 
+                                 [ngClass]="{'is-invalid ': submitted && f['password'].errors}" 
+                                 required>
+                                 <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['password'].errors['required']">
+                                     Password is required
+                                    </div>
+                                    <div *ngIf="f['password'].errors['minlength']">
+                                        Password must be at least 6 characters
+                                       </div>
+                                </div>
+                                  <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
+                        </div>
+                        <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">Remember me</label> 
+                            <a routerLink="/forget-password" id="forgot" class="font-weight-bold">Forgot password?</a> </div>
+                        <div type="submit" class="btn btn-primary btn-block mt-3">Login</div>
+                        <div class="text-center pt-4 text-muted">Don't have an account? <a routerLink="/register">Sign up</a> </div>
+                    </form>
+                </div>
+                <div class="mx-3 my-2 py-2 bordert">
+                    <div class="text-center py-3">
+                         <a href="https://wwww.facebook.com" target="_blank" class="px-2"> 
+                             <img src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg" alt=""> 
+                        </a>
+                <a href="https://www.google.com" target="_blank" class="px-2">
+                     <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="" (click)="signInHandler()">
+                     </a> 
+                     
+                        <a href="https://www.github.com" target="_blank" class="px-2">
+                      <img src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png" alt=""> </a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

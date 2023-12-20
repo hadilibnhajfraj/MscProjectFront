@@ -1,0 +1,64 @@
+
+<div>
+    <app-navbar></app-navbar>
+   </div>
+
+   <div>
+    <app-sidebar></app-sidebar>
+   </div>
+<div class="wrapper">
+	
+	<div class="card">
+		<div class="card-header">
+			<h2 class="card-title" >Resultat</h2>
+            <button class="btn btn-default"  (click)="addResultat()">
+                <span class="glyphicon glyphicon-folder-open"> 
+                    <span class="glyphicon glyphicon-plus"> Add Resultat </span></span></button>
+            
+        </div>
+		
+
+
+      <div class="card-body" *ngIf="resultats?.length > 0" >
+		<a (click)="exportexcel()" class="button" style="background-color:#399db6"><span class="glyphicon glyphicon-export"></span>Export to Excel</a>
+		<table id="excel-table" >
+            <tr>
+                <th>N° Analyse</th>
+                <th> ID </th>
+				<th> Nom Resultat </th>
+                <th>Valeur</th>
+				
+              
+				
+            </tr>
+            <tr *ngFor="let resultat of resultats | paginate: { itemsPerPage: 100, currentPage: p }">
+                <td>{{resultat.num_analyse}}</td>
+                <td> {{resultat.id_resultat}} </td>
+				<td> {{resultat.nom_resultat}} </td>
+                <td> {{resultat.valeur_resultat}} </td>
+                
+      
+
+                <button type="button"  (click)="updateResultat(resultat)" class="btn btn-info">
+                    <span class="glyphicon glyphicon-wrench">Edit</span></button>
+                    <button type="button" class="btn btn-danger" (click)="deleteResultat(resultat)">
+                        <span class="glyphicon glyphicon-trash">Delete</span></button>
+				
+				
+            </tr>
+		 </table>
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </div>
+    </div>
+</div>
+
+
+
+	
+
+
+
+
+
+
+

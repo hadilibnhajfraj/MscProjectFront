@@ -1,0 +1,40 @@
+<div class="container-fluid bg">
+    <div class="container mt-5" >
+        <div class="card">
+            <h5 class="card-header text-center">Create Laboratoire</h5>
+            <div class="card-body">
+  
+              <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                  <div class="form-group">
+                      <label for="nom_labo">Nom Labo</label>
+                      <input type="text" name="nom_labo" formControlName="nom_labo" autocomplete="off" class="form-control input-sm" placeholder="Nom Laboratoire">
+   
+                  </div>
+                
+   
+           
+                  <div class="form-group">
+                      <label for="adresse_labo">Adresse</label>
+                      <input type="text" name="adresse_labo" formControlName="adresse_labo"  autocomplete="off" class="form-control input-sm" placeholder="Adresse Laboratoire">
+   
+                  </div>
+     
+                  <div class="form-group">
+                      <label for="commune_labo">commune Laboratoire</label>
+                      <input type="text" name="commune_labo" formControlName="commune_labo" autocomplete="off" class="form-control input-sm" placeholder="Commune Laboratoire">
+   
+                  </div>
+                  <div class="form-group">
+                      <label for="pays_labo">Pays Laboratoire</label>
+                      <input type="text" name="pays_labo" formControlName="pays_labo" autocomplete="off" class="form-control input-sm" placeholder="Pays Laboratoire">
+   
+                  </div>
+                  <button type="submit" class="btn btn-primary" [disabled]="!angForm.valid">Create</button>
+   
+              </form>
+            </div>
+        </div>
+        </div>
+  </div>
+   
+  

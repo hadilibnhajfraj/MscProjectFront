@@ -1,0 +1,40 @@
+<div class="container-fluid bg">
+    <div class="container mt-5" >
+        <div class="card">
+            <h5 class="card-header text-center">Create Analyse</h5>
+            <div class="card-body">
+  
+              <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+                  <div class="form-group">
+                      <label for="patient_num">N° Patient</label>
+                      <input type="number" name="patient_num" formControlName="patient_num" autocomplete="off" class="form-control input-sm" placeholder="Numero Patient">
+   
+                  </div>
+                  <div class="form-group">
+                      <label for="labo_num">N° Laboratoire </label>
+                      <input type="number" name="labo_num" formControlName="labo_num" autocomplete="off" class="form-control input-sm" placeholder="Numero Laboratoire">
+   
+                  </div>
+   
+                  <div class="form-group">
+                      <label for="date">Date </label>
+                      <input type="date" name="date" formControlName="date" autocomplete="off" class="form-control input-sm" placeholder="Date Analyse">
+   
+                  </div>
+                  <div class="form-group">
+                      <label for="pdf_num">N° PDF</label>
+                      <input type="number" name="pdf_num" formControlName="pdf_num"  autocomplete="off" class="form-control input-sm" placeholder="Numero PDF">
+   
+                  </div>
+              
+              
+                  <button type="submit" class="btn btn-primary" [disabled]="!angForm.valid">Create</button>
+   
+              </form>
+            </div>
+        </div>
+        </div>
+  </div>
+
+   
+  

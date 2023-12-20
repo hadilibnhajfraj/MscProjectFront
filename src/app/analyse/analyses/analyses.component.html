@@ -1,0 +1,67 @@
+
+<div>
+    <app-navbar></app-navbar>
+   </div>
+
+   <div>
+    <app-sidebar></app-sidebar>
+   </div>
+<div class="wrapper">
+
+	<div class="card">
+		<div class="card-header">
+			<h2 class="card-title text-center"  >Analyse </h2>
+
+            <button class="btn btn-default"  (click)="addUser()">
+                <span class="glyphicon glyphicon-book">
+                    <span class="glyphicon glyphicon-plus"> Add Analyse </span></span></button>
+
+        </div>
+
+
+
+      <div class="card-body" *ngIf="analyses?.length > 0" >
+		<a (click)="exportexcel()" class="button" style="background-color:#399db6"><span class="glyphicon glyphicon-export"></span>Export to Excel</a>
+		<table id="excel-table" >
+            <tr>
+                <th>ID</th>
+                <th> Nom </th>
+				<th> Valeur </th>
+                <th>PDF</th>
+				<th> Date </th>
+
+
+            </tr>
+            <tr *ngFor="let analyse of analyses | paginate: { itemsPerPage: 100, currentPage: p }">
+                <td>{{analyse.id_analyse}}</td>
+                <td> {{analyse.nom}} </td>
+				<td> {{analyse.val}} </td>
+                <td><button type="button"  class="btn btn-link"><a routerLink='/analyse/resultat'>
+                    <span class="glyphicon glyphicon-eye-open">{{analyse.filename}}</span></a></button> </td>
+				<td> {{analyse.date}} </td>
+
+
+                <button type="button"  (click)="updateAnalyse(analyse)" class="btn btn-info">
+                    <span class="glyphicon glyphicon-wrench">Edit</span></button>
+
+                    <button type="button" class="btn btn-danger" (click)="deleteAnalyse(analyse)">
+                        <span class="glyphicon glyphicon-trash">Delete</span></button>
+
+
+
+            </tr>
+		 </table>
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

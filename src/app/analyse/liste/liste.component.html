@@ -1,0 +1,59 @@
+
+<div>
+    <app-navbar></app-navbar>
+   </div>
+
+   <div>
+    <app-sidebar></app-sidebar>
+   </div>
+<div class="wrapper">
+	
+	<div class="card">
+		<div class="card-header">
+			<h2 class="card-title text-center"  >Analyse </h2>
+            
+               
+        </div>
+		
+
+
+      <div class="card-body" *ngIf="analyses?.length > 0" >
+        
+		<ul id="excel-table" >
+            <li>
+                <th>ID</th>
+                <th> Nom </th>
+				<th> Valeur </th>
+                <th>PDF</th>
+				<th> Date </th>
+              
+				
+            </li>
+            <li *ngFor="let analyse of analyses | paginate: { itemsPerPage: 100, currentPage: p }">
+                <td>{{analyse.id_analyse}}</td>
+                <td> {{analyse.nom}} </td>
+				<td> {{analyse.val}} </td>
+                <td><button type="button"  class="btn btn-link"><a routerLink='/analyse/resultat'>
+                    <span class="glyphicon glyphicon-eye-open">{{analyse.filename}}</span></a></button> </td>
+				<td> {{analyse.date}} </td>
+      
+
+               
+				
+				
+                </li>
+        </ul>
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </div>
+    </div>
+</div>
+
+
+
+	
+
+
+
+
+
+
